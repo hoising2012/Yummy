@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+Angle A: <input type="range" id="myRange_1" value="45" min="0" max="180">
+<br \>
+Angle B: <input type="range" id="myRange_2" value="45" min="0" max="180">
+
+<p>Click to display Exterior Angle</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myRange_1").value;
+  var y = document.getElementById("myRange_2").value;
+  var f = interior_angle(x,y);
+  var A;
+	console.log(f);
+  	if(f<180){
+		A=exterior_angle(f);
+  		document.getElementById("demo").innerHTML = A + " degrees";
+		}else{
+		document.getElementById("demo").innerHTML = "error";
+		}
+}
+function interior_angle(a,b){
+	let p = parseInt(a);
+	let q = parseInt(b);
+	return p + q;
+}
+function exterior_angle(n){
+	var t=180-n;
+      return t;
+    }
+</script>
+</body>
+</html>
