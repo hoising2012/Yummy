@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$product=1;
+for($n=0; $n<=99; $n++){
+    if($n==0){	
+        $product=$product*2;
+    }else if($n==1){
+	$p=sqrt(2);
+    $Q=2/$p;
+    $product=$product*$Q;
+	}else{ 
+    	$p=2+$p;
+        $p=sqrt($p);
+        $Q=2/$p;
+        $product=$product*$Q;
+           }		
+}
+$product=round($product,5);
+echo "The number π is approximately equal to ".$product.".";
+?>
+</body>
+</html>
