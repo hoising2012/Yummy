@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$x=2;
+for($k=1; $k<=99; $k++){
+        $S=pow($x,2)+5*$k;
+		$G=gmp_perfect_square($S);
+        if($G==1){
+        echo "The answer is ".$S.".";
+        }
+		$x=$S;
+}
+echo "<br \>";
+echo "I will always love you."
+?>
+</body>
+</html>
