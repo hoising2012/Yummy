@@ -45,7 +45,8 @@ do{
     	break;	  	   
     }   
 }while($y!=0);
-echo $str;
+$float_value_of_var = floatval($str);
+echo $float_value_of_var;
 ?>
 </body>
 </html>
