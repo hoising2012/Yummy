@@ -16,8 +16,8 @@ function f($value, $div)
 
         return $result;
 }
-$V=1;
-$W=7;
+$V=15;
+$W=13;
 $count=0;
 $str="";
 do{
@@ -41,7 +41,7 @@ do{
     }
     $pattern = "/$x/i";
     $match=preg_match_all($pattern, $str);
-    if($match==2){
+    if($match==3){
     	break;	  	   
     }   
 }while($y!=0);
