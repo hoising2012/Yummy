@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+function m($value, $div){
+	$result=$value%$div;
+    return $result;
+}
+function f($value, $div)
+{
+        $result = 0;
+        while ($value >= $div) {
+                $result++;
+                $value -= $div;
+        }
+
+        return $result;
+}
+$V=1;
+$W=7;
+$count=0;
+$str="";
+do{
+	if(($count==0)&&($V < $W)){
+    $str.="0";
+   	$y=m($V,$W);
+    }else if($V >= $W){
+    $x=f($V,$W);
+	$y=m($V,$W);
+    $str.=$x;
+    }else if($V < $W){
+    	$str.="0";   
+    }
+    if($y<$W){
+    	$V=10*$y;
+        $count++;
+        $y=$V;
+    }
+    if(($count==1)&&($y!=0)){
+    $str.=".";
+    }
+    $pattern = "/$x/i";
+    $match=preg_match_all($pattern, $str);
+    if($match==2){
+    	break;	  	   
+    }   
+}while($y!=0);
+echo $str;
+?>
+</body>
+</html>
