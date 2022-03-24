@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+<body>
+<?php
+$a=0;
+$b=1;
+echo "<h1>The First 12th Fibonacci numbers are: </h1>";
+echo "<div style=\"overflow-x:auto;\">";
+echo "<table>";
+    echo "<tr>";
+      echo "<th>F0</th>";
+      echo "<th>F1</th>";
+      echo "<th>F2</th>";
+      echo "<th>F3</th>";
+      echo "<th>F4</th>";
+      echo "<th>F5</th>";
+      echo "<th>F6</th>";
+      echo "<th>F7</th>";
+      echo "<th>F8</th>";
+      echo "<th>F9</th>";
+      echo "<th>F10</th>";
+      echo "<th>F11</th>";
+      echo "<th>F12</th>";
+    echo "</tr>";
+	echo "<tr>";
+	echo "<td>$a</td>";
+    echo "<td>$b</td>";
+for($i=0; $i<=10; $i++){		
+    $f=$a+$b;
+	echo "<td>$f</td>";    
+    $a=$b;
+    $b=$f;
+    }
+echo "</tr>";
+echo "</table>";
+echo "</div>";
+?>
+</body>
+</html>
