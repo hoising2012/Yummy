@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+echo "<table>";
+echo "<tr>";
+echo "<th>X</th>";
+echo "<th>Y</th>";
+echo "<th>N</th>";
+echo "</tr>";
+for($i=0; $i<=1; $i++){  
+	for($j=0; $j<=1; $j++){
+    echo "<tr>";
+    	$x=pow($i,2);
+        $y=pow($j,2);
+         if($x%2 == 0){
+    	echo "<td>even</td>";
+    	}else{
+    	echo "<td>odd</td>";
+    	}
+        if($y%2 == 0){
+    	echo "<td>even</td>";
+    	}else{
+    	echo "<td>odd</td>";
+    	}
+        $F=$x+$y;
+        echo "<td>".($F%4)."</td>";
+        echo "</tr>";
+	}
+}
+?>
+</body>
+</html>
