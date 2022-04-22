@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+[$x , $y]=Sum_two_number(5);
+[$z , $w]=Sum_two_number(13);
+$X = $x*$z+$y*$w;
+$Y = $x*$w-$y*$z;
+$P=pow($X,2)+pow($Y,2);
+echo "X: ".$X;
+echo " , ";
+echo "Y: ".$Y;
+echo "<br \>";
+echo "Number 5 times Number 13 is equal to ".$P.".";
+function Sum_two_number(int $n){
+	for($i=1; $i<=$n-1; $i++){
+		$a=pow($i,2);
+    	$F=$n-$a;
+    	$F=sqrt($F);
+		$s=is_decimal($F);
+		if(($s==0)&&($F<$i)){
+        	return array($i, $F);
+    	}
+	}
+}
+function is_decimal($val){
+	return is_numeric($val) && floor($val) != $val; 
+}
+?>
+</body>
+</html>
