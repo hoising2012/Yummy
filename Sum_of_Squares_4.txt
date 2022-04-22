@@ -20,8 +20,9 @@ function Sum_two_number(int $n){
 		$s=is_decimal($F);
 		if(($s==0)&&($F<=$i)){
         	return array($i, $F);
-    	}
+    		}
 	}
+	return false;
 }
 function is_decimal($val){
 	return is_numeric($val) && floor($val) != $val; 
