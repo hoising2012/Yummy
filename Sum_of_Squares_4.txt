@@ -18,7 +18,7 @@ function Sum_two_number(int $n){
     	$F=$n-$a;
     	$F=sqrt($F);
 		$s=is_decimal($F);
-		if(($s==0)&&($F<$i)){
+		if(($s==0)&&($F<=$i)){
         	return array($i, $F);
     	}
 	}
