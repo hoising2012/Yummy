@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$A="538461";
+echo "The original number is ".$A.".";
+echo "<br \>";
+echo "Moving the last digit to the front, we get ";
+$n=strlen($A)-1;
+$x=substr($A,$n);
+echo $x;
+$y=rtrim($A,$x);
+echo substr($y,0);
+echo ".";
+?>
+</body>
+</html>
