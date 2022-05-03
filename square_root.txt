@@ -5,7 +5,7 @@
 $N=841;
 $A=array();
 $Y=array();
-$Q="";
+$S="";
 $M="";
 $b="";
 $F=array();
@@ -26,21 +26,21 @@ for($i=0; $i<=9; $i++){
    	$b=substr($N, 0, -2);  
 for($i=0; $i<=9; $i++){
     if($b<$Y[$i]){
-    $Q=$A[$i-1];
-    $M=$Q*($Q+1);
+    $S=$A[$i-1];
+    $M=$S*($S+1);
     break;
     }else if($b==$Y[$i]){
-    $Q=$A[$i];
-    $M=$Q*($Q+1);
+    $S=$A[$i];
+    $M=$S*($S+1);
     break;
     }
 }
 $str="";
 	if($b>$M){
-    	$str.=$Q;
+    	$str.=$S;
         $str.=$F[1];
     }else{
-        $str.=$Q;
+        $str.=$S;
         $str.=$F[0];
     }
 echo "The square root of ".$N." is ".$str.".";
