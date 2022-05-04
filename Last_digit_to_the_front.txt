@@ -10,7 +10,7 @@ $n=strlen($A)-1;
 $x=substr($A,$n);
 echo $x;
 $y=substr($A, 0, -1);
-echo substr($y,0);
+echo $y;
 echo ".";
 ?>
 </body>
