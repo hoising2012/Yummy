@@ -9,7 +9,7 @@ echo "Moving the last digit to the front, we get ";
 $n=strlen($A)-1;
 $x=substr($A,$n);
 echo $x;
-$y=rtrim($A,$x);
+$y=substr($A, 0, -1);
 echo substr($y,0);
 echo ".";
 ?>
