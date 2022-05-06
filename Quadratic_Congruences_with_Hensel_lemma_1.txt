@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$A=array();
+$X=array();
+$count=0;
+for($x=1; $x<=2; $x++){
+	$fx_mod_3=pow($x,2)+2;
+	if($fx_mod_3%3==0){
+    	$A[$count]=$x;
+    	$count++;
+    	}
+}
+for($i=0; $i<=sizeof($A)-1; $i++){
+	$f_x=pow($A[$i],2)+3*$A[$i]+17;
+    $f_dash=2*$A[$i];
+    $P=(-1)*$f_x/3;
+        $Q=$P%3;
+        if($Q<0){
+        	$Q=3+$Q;
+        }
+    	$k=$Q/$f_dash;
+        $X[$i]=$A[$i]+3*$k; 		
+}
+ 	echo var_dump($X);
+?>
+</body>
+</html>
