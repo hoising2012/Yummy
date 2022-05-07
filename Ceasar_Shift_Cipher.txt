@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Alphabet=array("A","B","C","D","E",
+				"F","G","H","I","J",
+                "K","L","M","N","O",
+                "P","Q","R","S","T",
+                "U","V","W","X","Y",
+                "Z");               
+$string="SEE ME";
+$string_1="KIQRV";
+$S=strlen($string);
+$c=0;
+echo "To encrypt \"SEE ME\" : ";
+for($i=0; $i<=$S-1; $i++){
+        $x=$string[$i];
+	for($j=0; $j<=25; $j++){
+    	$y=$Alphabet[$j];
+    	$pattern = "/$y/i";
+        $z=preg_match($pattern,$x);
+     	if($z==1){
+        	if($i==0){
+        	$Q=$j+3;
+            $c++;
+            if($Q>25){
+            	$Q=$Q-25-1;
+            }
+            $encrpyted_text=$Alphabet[$Q];
+            echo $encrpyted_text;
+            }else{
+            	$P=$j+3+$c;
+                $c++;
+                if($P>25){
+            	$P=$P-25-1;
+            	}
+                $encrpyted_text=$Alphabet[$P];
+                echo $encrpyted_text;  
+            }	
+        }else if($x==" "){
+        	$encrpyted_text=" ";
+            echo $encrpyted_text;
+        }        
+	}        
+}
+echo "<br \>";
+echo "To decrypt \"KIQRV\" : ";
+$c=0;
+for($i=0; $i<=$S-1; $i++){
+        $x=$string_1[$i];
+	for($j=0; $j<=25; $j++){
+    	$y=$Alphabet[$j];
+    	$pattern = "/$y/i";
+        $z=preg_match($pattern,$x);
+     	if($z==1){
+        	if($i==0){
+        	$Q=$j-3;
+            $c++;
+            if($Q<0){
+            	$Q=25-$Q+1;
+            }
+            $decrpyted_text=$Alphabet[$Q];
+            echo $decrpyted_text;
+            }else{
+            	$P=$j-3-$c;
+                $c++;
+                if($P<0){
+            	$P=25-$P+1;
+            	}
+                $decrpyted_text=$Alphabet[$P];
+                echo $decrpyted_text;  
+            }	
+        }else if($x==" "){
+        	$decrpyted_text=" ";
+            echo $decrpyted_text;
+        }        
+	}        
+}
+?>
+</body>
+</html>
