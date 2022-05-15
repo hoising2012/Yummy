@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;	
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+p {text-align: center;}
+.dot1 {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot2 {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot3 {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot4 {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+<h3>Adding up your numbers: 34<h3>
+<div class="container">
+<div style="text-align:center" id="firstrow">
+<span class="dot1" id="1" onclick="clickHandler(this);">1</span>
+
+<span class="dot1" id="2" onclick="clickHandler(this);">2</span>
+
+<span class="dot1" id="3" onclick="clickHandler(this);">3</span>
+
+<span class="dot1" id="4" onclick="clickHandler(this);">4</span>
+</div>
+<br \>
+<div style="text-align:center" id="secondrow">
+<span class="dot2" id="5" onclick="clickHandler(this);">5</span>
+
+<span class="dot2" id="6" onclick="clickHandler(this);">6</span>
+
+<span class="dot2" id="7" onclick="clickHandler(this);">7</span>
+
+<span class="dot2" id="8" onclick="clickHandler(this);">8</span>
+</div>
+<br \>
+<div style="text-align:center" id="thirdrow">
+<span class="dot3" id="9" onclick="clickHandler(this);">9</span>
+
+<span class="dot3" id="10" onclick="clickHandler(this);">10</span>
+
+<span class="dot3" id="11" onclick="clickHandler(this);">11</span>
+
+<span class="dot3" id="12" onclick="clickHandler(this);">12</span>
+</div>
+<br \>
+<div style="text-align:center" id="fouthrow">
+<span class="dot4" id="13" onclick="clickHandler(this);">13</span>
+
+<span class="dot4" id="14" onclick="clickHandler(this);">14</span>
+
+<span class="dot4" id="15" onclick="clickHandler(this);">15</span>
+
+<span class="dot4" id="16" onclick="clickHandler(this);">16</span>
+</div>
+<br \>
+<br \>
+<div class="center">
+<button onclick="Reset()">Reset</button>
+ </div>
+</div>
+
+  
+
+
+<script>
+function clickHandler(object) {	
+	console.log(object.className);
+	console.log(object.id);
+	var c = document.getElementsByClassName(object.className);
+  	for (var i=0; i<c.length; i++) {
+   	 c[i].style.backgroundColor = "red";
+  	}
+	
+	for(var i=1; i<=16; i++ ){
+		if((object.id%4==0)&&(i%4==0)){
+		
+   	 	document.getElementById(i).style.backgroundColor = "red";
+  		
+		}else if((object.id%4==1)&&(i%4==1)){
+		
+   	 	document.getElementById(i).style.backgroundColor = "red";
+  		
+		}else if((object.id%4==2)&&(i%4==2)){
+		
+   	 		document.getElementById(i).style.backgroundColor = "red";
+  		
+		}else if((object.id%4==3)&&(i%4==3)){
+		
+   	 		document.getElementById(i).style.backgroundColor = "red";
+  		
+		}
+	}
+	const myElement = document.getElementById(object.id);
+	myElement.style.backgroundColor = "blue";
+	myElement.style.color = "white";
+}
+function Reset(){
+	for(var i=1; i<=16; i++){
+	var myElement = document.getElementById(i);
+	myElement.style.backgroundColor = "#bbb";
+	myElement.style.color = "black";
+	}
+}
+
+</script>
+</body>
+</html> 
