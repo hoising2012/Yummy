@@ -3,6 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+.disable { 
+  pointer-events: none; 
+}	
 .container {
   margin: 0;
   position: absolute;
@@ -97,10 +100,6 @@ p {text-align: center;}
 <button onclick="Reset()">Reset</button>
  </div>
 </div>
-
-  
-
-
 <script>
 function clickHandler(object) {	
 	console.log(object.className);
@@ -108,39 +107,46 @@ function clickHandler(object) {
 	var c = document.getElementsByClassName(object.className);
   	for (var i=0; i<c.length; i++) {
    	 c[i].style.backgroundColor = "red";
+	 c[i].classList.add('disable');
   	}
 	
 	for(var i=1; i<=16; i++ ){
 		if((object.id%4==0)&&(i%4==0)){
-		
    	 	document.getElementById(i).style.backgroundColor = "red";
-  		
+  		document.getElementById(i).classList.add('disable');
 		}else if((object.id%4==1)&&(i%4==1)){
-		
    	 	document.getElementById(i).style.backgroundColor = "red";
-  		
+  		document.getElementById(i).classList.add('disable');
 		}else if((object.id%4==2)&&(i%4==2)){
-		
-   	 		document.getElementById(i).style.backgroundColor = "red";
-  		
+   	 	document.getElementById(i).style.backgroundColor = "red";
+  		document.getElementById(i).classList.add('disable');
 		}else if((object.id%4==3)&&(i%4==3)){
-		
-   	 		document.getElementById(i).style.backgroundColor = "red";
-  		
+   	 	document.getElementById(i).style.backgroundColor = "red";
+  		document.getElementById(i).classList.add('disable');
 		}
 	}
 	const myElement = document.getElementById(object.id);
 	myElement.style.backgroundColor = "blue";
 	myElement.style.color = "white";
+	myElement.classList.add('disable');
 }
 function Reset(){
 	for(var i=1; i<=16; i++){
 	var myElement = document.getElementById(i);
 	myElement.style.backgroundColor = "#bbb";
 	myElement.style.color = "black";
+	myElement.classList.remove('disable');
 	}
 }
-
+window.addEventListener('load', function(event) {
+Reset();
+});
+let elementsArray = document.querySelectorAll("span");
+elementsArray.forEach(function(elem) {
+    elem.addEventListener("click", function(e) {
+	clickHandler(elem, event);
+    });
+});
 </script>
 </body>
 </html> 
