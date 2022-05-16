@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$N=841;
+$A=array();
+$Y=array();
+$S="";
+$M="";
+$b="";
+$F=array();
+$count=0;
+$n_1=strlen($N)-1;
+$M=substr($N,$n_1);  
+for($i=0; $i<=9; $i++){
+	$A[$i]=$i;
+    $x=pow($i,2);
+    $Y[$i]=$x;
+    $n=strlen($x)-1;
+	$B=substr($x,$n);    
+    if($M==$B){
+    	$F[$count]=$A[$i];   
+        $count++;
+    }    
+}
+   	$b=substr($N, 0, -2);  
+for($i=0; $i<=9; $i++){
+    if($b<$Y[$i]){
+    $S=$A[$i-1];
+    $M=$S*($S+1);
+    break;
+    }else if($b==$Y[$i]){
+    $S=$A[$i];
+    $M=$S*($S+1);
+    break;
+    }
+}
+$str="";
+	if($b>$M){
+    	$str.=$S;
+        $str.=$F[1];
+    }else{
+        $str.=$S;
+        $str.=$F[0];
+    }
+echo "The square root of ".$N." is ".$str.".";
+?>
+</body>
+</html>
