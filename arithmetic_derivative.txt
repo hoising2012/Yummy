@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+function sec_printDivisors($n) {
+  $count=0;
+  for($i = 1; $i <= $n; $i++) {
+    if($n%$i == 0){
+      	if($count==1){
+         	if($i==$n){
+         	return 1;
+         	}else{
+         	return $i;
+          	}
+         }
+      	$count++;
+      	}
+  }
+}
+function AD($P) {
+$S=sec_printDivisors($P);
+if($S==1){
+	$Sum=1;
+}else{
+$Sum="";
+}
+$product=1;
+	while($S!=1){
+    	$A=$P/$S;
+        $x=$product*$A;
+    	$Sum=$Sum+$x;
+		$product=$product*$S;
+        $P=$A;
+        $S=sec_printDivisors($A);
+       	if($S==1){
+        $Sum=$Sum+$product;
+        }    
+    }
+return $Sum;
+}
+echo "The arithmetic derivative of number p is ";
+echo AD(4);
+echo ".";
+echo "<br \>";
+function AD_of_faction ($M, $N){
+	$X=AD($M)*$N;
+    $Y=AD($N)*$M;
+    $Z=pow($N,2);
+    $F=($X-$Y)/$Z;
+	return $F;
+}
+echo "The arithmetic derivative of faction p/q is ";
+echo AD_of_faction(12,2);
+echo ".";
+?>
+</body>
+</html>
