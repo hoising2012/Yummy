@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<style>
+.show {
+	font-size: 150%;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+<body>
+<h3>Left click add occurrence by 1; middle click decrease occurrence by 1</h3>
+<br \>
+<div class="container">
+<div style="text-align:center" id="zero_row">
+<span class="show">Digit 0 appears&nbsp</span>
+<span class="show" id="0" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="one_row">
+<span class="show">Digit 1 appears&nbsp</span>
+<span class="show" id="1" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="two_row">
+<span class="show">Digit 2 appears&nbsp</span>
+<span class="show" id="2" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="three_row">
+<span class="show">Digit 3 appears&nbsp</span>
+<span class="show" id="3" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="four_row">
+<span class="show">Digit 4 appears&nbsp</span>
+<span class="show" id="4" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="five_row">
+<span class="show">Digit 5 appears&nbsp</span>
+<span class="show" id="5" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="six_row">
+<span class="show">Digit 6 appears&nbsp</span>
+<span class="show" id="6" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="seven_row">
+<span class="show">Digit 7 appears&nbsp</span>
+<span class="show" id="7" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="eight_row">
+<span class="show">Digit 8 appears&nbsp</span>
+<span class="show" id="8" onmousedown="WhichButton(event)">0</span>
+</div>
+<div style="text-align:center" id="nine_row">
+<span class="show">Digit 9 appears&nbsp</span>
+<span class="show" id="9" onmousedown="WhichButton(event)">0</span>
+</div>
+<br \>
+<br \>
+<div class="center">
+<button type="button" onclick="Reset()">Reset</button>
+</div>
+</div>
+<script>
+function WhichButton(event) {
+  	 var x = event.target;
+  	 var myElement = document.getElementById(x.id);
+	 var p = parseInt(myElement.textContent,10);
+	 console.log(p);
+	if(event.button == 0){
+		myElement.innerHTML = p + 1;
+	}else if (event.button == 1){
+		myElement.innerHTML = p - 1;
+	}	
+}
+function Reset(){
+	for(var i=0; i<=9; i++){
+	var c = document.getElementById(i);
+	    c.innerHTML = "0";
+	}
+}
+</script>
+</body>
+</html>
