@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+<body>
+<?php
+$a=2;
+$b=1;
+echo "<h1>The First 12th Lucas numbers are: </h1>";
+echo "<div style=\"overflow-x:auto;\">";
+echo "<table>";
+    echo "<tr>";
+      echo "<th>L0</th>";
+      echo "<th>L1</th>";
+      echo "<th>L2</th>";
+      echo "<th>L3</th>";
+      echo "<th>L4</th>";
+      echo "<th>L5</th>";
+      echo "<th>L6</th>";
+      echo "<th>L7</th>";
+      echo "<th>L8</th>";
+      echo "<th>L9</th>";
+      echo "<th>L10</th>";
+      echo "<th>L11</th>";
+      echo "<th>L12</th>";
+    echo "</tr>";
+	echo "<tr>";
+	echo "<td>$a</td>";
+    echo "<td>$b</td>";
+for($i=0; $i<=10; $i++){		
+    $Lucas=$a+$b;
+	echo "<td>$Lucas</td>";    
+    $a=$b;
+    $b=$Lucas;
+    }
+echo "</tr>";
+echo "</table>";
+echo "</div>";
+?>
+</body>
+</html>
