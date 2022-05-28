@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script>
+var xArray = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1];
+var yArray = [];
+for(var i=0; i<=10; i++){
+	yArray[i] = 100*xArray[i]*(1-xArray[i]);
+	}
+
+var data = [{
+  x: xArray,
+  y: yArray,
+  mode:"lines"
+}];
+
+var layout = {
+  xaxis: {range: [0, 1], title: "Probability"},
+  yaxis: {range: [0, 40], title: "Number of unpecked chicks"},  
+  title: "Expected unpecked chicks"
+};
+Plotly.newPlot("myPlot", data, layout);
+</script>
+</body>
+</html>
