@@ -2,8 +2,8 @@
 <html>
 <body>
 <?php
-$A = 2;
-$B = 13;
+$A = 1;
+$B = 11;
 $res = "";
 $point = true;
 	do{
@@ -23,7 +23,7 @@ $point = true;
         }  
     $pattern = "/$X/i";
     $match=preg_match_all($pattern, $res);
-    if($match==3){
+    if($match==4){
     	break;	  	   
     } 
 	}while($P!=0);
