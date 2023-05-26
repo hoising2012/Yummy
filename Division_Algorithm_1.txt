@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$A = 2;
+$B = 13;
+$res = "";
+$point = true;
+	do{
+		$C = $A/$B;
+        $X = floor($C);
+        $P = modular($A,$B);
+		if($P < $B){
+        	$P = 10*$P;
+            $A = $P;
+        }
+        if($point==true){
+        	$res .= $X;
+            $res .= ".";
+            $point = false;
+        }else{
+        	$res .= $X;
+        }  
+    $pattern = "/$X/i";
+    $match=preg_match_all($pattern, $res);
+    if($match==3){
+    	break;	  	   
+    } 
+	}while($P!=0);
+    $last = substr($res, -1);
+    $second_last = substr($res, -2);
+    if($last==0){
+        	$res = rtrim($res,"0");
+        }
+    	echo $res;
+    	if(($second_last[0]==$second_last[1])&&($last<5)){
+    		echo $last;
+    	}else if(($second_last[0]==$second_last[1])&&($last>=5)){
+        	echo $last+1;
+        }
+function modular($val, $d){
+	$result = $val%$d;
+	return $result;
+}
+?>
+</body>
+</html>
