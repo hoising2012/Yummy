@@ -11,7 +11,23 @@ Angle B: <input type="range" id="myRange_2" value="45" min="0" max="180">
 
 <p id="demo"></p>
 
+<canvas id="myCanvas" width="250" height="250" style="border:1px solid grey;"></canvas>
+	
 <script>
+function draw(A){
+	const canvas = document.getElementById("myCanvas");
+	const ctx = canvas.getContext("2d");
+	ctx.clearRect(0, 0, 250, 250);
+	var B = 100*Math.cos(A/360);
+	var H = 100*Math.sin(A/360);
+	ctx.beginPath()
+	ctx.moveTo(20, 125);
+	ctx.lineTo(20+B, 125-4*H);
+	ctx.lineTo(20+B, 125+4*H);
+	ctx.closePath();
+	ctx.fillStyle = "red";
+	ctx.fill();
+		}
 function myFunction() {
   var x = document.getElementById("myRange_1").value;
   var y = document.getElementById("myRange_2").value;
@@ -24,6 +40,7 @@ function myFunction() {
 		}else{
 		document.getElementById("demo").innerHTML = "error";
 		}
+	draw(A);
 }
 function interior_angle(a,b){
 	let p = parseInt(a);
@@ -32,7 +49,7 @@ function interior_angle(a,b){
 }
 function exterior_angle(n){
 	var t=180-n;
-      return t;
+        return t;
     }
 </script>
 </body>
